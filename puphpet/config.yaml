@@ -3,14 +3,14 @@ vagrantfile-local:
     vm:
         box: puphpet/ubuntu1404-x64
         box_url: puphpet/ubuntu1404-x64
-        hostname: 'vagrant.zrada-peremoga.com'
+        hostname: vagrant.zrada-peremoga.com
         memory: '2048'
         cpus: '1'
         chosen_provider: virtualbox
         network:
             private_network: 10.10.10.10
             forwarded_port:
-                PU3mNaN9q9Xz:
+                C0Z5JWdL1t1z:
                     host: '8848'
                     guest: '22'
         post_up_message: ''
@@ -32,7 +32,7 @@ vagrantfile-local:
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
                     - '--parser future'
         synced_folder:
-            Z9aMN895cVFQ:
+            6sL1jOHDeVTN:
                 owner: www-data
                 group: www-data
                 source: ./
@@ -89,7 +89,7 @@ apache:
     modules:
         - rewrite
     vhosts:
-        prdedlvknidf:
+        2vgxdu2c2f9g:
             servername: awesome.dev
             serveraliases:
                 - www.awesome.dev
@@ -98,7 +98,7 @@ apache:
             setenv:
                 - 'APP_ENV dev'
             directories:
-                64mwc3cw9aer:
+                h7mgst8fwnj8:
                     provider: directory
                     path: /var/www/awesome
                     options:
@@ -126,16 +126,14 @@ nginx:
         proxy_buffers: '4 256k'
     upstreams: {  }
     vhosts:
-        qnwfnzkrmooo:
+        x8rirdm3x6wk:
             proxy: ''
-            server_name: zrada-peremoga.com
-            server_aliases:
-                - www.zrada-peremoga.com
+            server_name: vagrant.zrada-peremoga.com
             www_root: /var/www/zrada/web
             listen_port: '80'
             location: \.php$
             index_files:
-                - app.php
+                - app_dev.php
             envvars:
                 - 'APP_ENV dev'
             engine: php
@@ -195,7 +193,7 @@ drush:
 ruby:
     install: '1'
     versions:
-        01HcGXaaLjXS:
+        l9NYeaiIEoPr:
             version: ''
 nodejs:
     install: '0'
@@ -204,7 +202,7 @@ python:
     install: '1'
     packages: {  }
     versions:
-        X20TBfwdG0q2:
+        RROs7WJmmLuW:
             version: ''
 mysql:
     install: '0'
@@ -212,7 +210,7 @@ mysql:
     root_password: '123'
     adminer: 0
     databases:
-        1HkXpKlRqWWm:
+        uZvzCuHDesMr:
             grant:
                 - ALL
             name: dbname
