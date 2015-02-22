@@ -107,4 +107,5 @@ crashlytics-build.properties
 
 
 
-puphpet/files/dot/ssh
+puphpet/files/dot/ssh/
+html/xhprof/bin/
