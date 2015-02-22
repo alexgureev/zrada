@@ -4,7 +4,7 @@ vagrantfile-local:
         box: puphpet/ubuntu1404-x64
         box_url: puphpet/ubuntu1404-x64
         hostname: 'vagrant.zrada-peremoga.com'
-        memory: '512'
+        memory: '2048'
         cpus: '1'
         chosen_provider: virtualbox
         network:
@@ -36,7 +36,7 @@ vagrantfile-local:
                 owner: www-data
                 group: www-data
                 source: ./
-                target: /var/www
+                target: /var/www/zrada
                 sync_type: default
                 rsync:
                     args:
@@ -131,7 +131,7 @@ nginx:
             server_name: zrada-peremoga.com
             server_aliases:
                 - www.zrada-peremoga.com
-            www_root: /var/www/zrada
+            www_root: /var/www/zrada/web
             listen_port: '80'
             location: \.php$
             index_files:
