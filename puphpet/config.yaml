@@ -3,12 +3,12 @@ vagrantfile-local:
     vm:
         box: puphpet/ubuntu1404-x64
         box_url: puphpet/ubuntu1404-x64
-        hostname: ''
+        hostname: 'vagrant.zrada-peremoga.com'
         memory: '512'
         cpus: '1'
         chosen_provider: virtualbox
         network:
-            private_network: 192.168.1.200
+            private_network: 10.10.10.10
             forwarded_port:
                 PU3mNaN9q9Xz:
                     host: '8848'
@@ -63,7 +63,10 @@ vagrantfile-local:
         host: detect
 server:
     install: '1'
-    packages: {  }
+    packages:
+        - htop
+        - nano
+        - tmux
 users_groups:
     install: '1'
     groups: {  }
@@ -131,6 +134,8 @@ nginx:
             www_root: /var/www/zrada
             listen_port: '80'
             location: \.php$
+            index_files:
+                - app.php
             envvars:
                 - 'APP_ENV dev'
             engine: php
