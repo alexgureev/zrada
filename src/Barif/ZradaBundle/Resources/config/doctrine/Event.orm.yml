@@ -1,0 +1,15 @@
+Barif\ZradaBundle\Entity\Event:
+    type: entity
+    table: null
+    repositoryClass: Barif\ZradaBundle\Entity\EventRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

@@ -1,0 +1,3 @@
+barif_zrada_homepage:
+    path:     /
+    defaults: { _controller: BarifZradaBundle:Default:index }

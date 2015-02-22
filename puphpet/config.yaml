@@ -10,7 +10,7 @@ vagrantfile-local:
         network:
             private_network: 10.10.10.10
             forwarded_port:
-                C0Z5JWdL1t1z:
+                Lof2hCzwm3pj:
                     host: '8848'
                     guest: '22'
         post_up_message: ''
@@ -32,7 +32,7 @@ vagrantfile-local:
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
                     - '--parser future'
         synced_folder:
-            6sL1jOHDeVTN:
+            Fg8zgKq65B2u:
                 owner: www-data
                 group: www-data
                 source: ./
@@ -89,7 +89,7 @@ apache:
     modules:
         - rewrite
     vhosts:
-        2vgxdu2c2f9g:
+        jzw7yk8vc21r:
             servername: awesome.dev
             serveraliases:
                 - www.awesome.dev
@@ -98,7 +98,7 @@ apache:
             setenv:
                 - 'APP_ENV dev'
             directories:
-                h7mgst8fwnj8:
+                wokbesv3b5db:
                     provider: directory
                     path: /var/www/awesome
                     options:
@@ -126,7 +126,7 @@ nginx:
         proxy_buffers: '4 256k'
     upstreams: {  }
     vhosts:
-        x8rirdm3x6wk:
+        9jrh4mbjkoix:
             proxy: ''
             server_name: vagrant.zrada-peremoga.com
             www_root: /var/www/zrada/web
@@ -148,13 +148,22 @@ php:
     modules:
         php:
             - cli
+            - curl
             - intl
             - mcrypt
-            - curl
             - memcached
         pear: {  }
         pecl:
             - pecl_http
+            - PDO
+            - PDO_PGSQL
+            - oauth
+            - json
+            - amqp
+            - intl
+            - ZendOpcache
+            - redis
+            - date_time
     ini:
         display_errors: On
         error_reporting: '-1'
@@ -193,7 +202,7 @@ drush:
 ruby:
     install: '1'
     versions:
-        l9NYeaiIEoPr:
+        9eGWYgEPJ1Fu:
             version: ''
 nodejs:
     install: '0'
@@ -202,7 +211,7 @@ python:
     install: '1'
     packages: {  }
     versions:
-        RROs7WJmmLuW:
+        6uEGiTMQc0cI:
             version: ''
 mysql:
     install: '0'
@@ -210,7 +219,7 @@ mysql:
     root_password: '123'
     adminer: 0
     databases:
-        uZvzCuHDesMr:
+        VHhW2uxPCDso:
             grant:
                 - ALL
             name: dbname
@@ -225,7 +234,13 @@ postgresql:
         user_group: postgres
         encoding: UTF8
         version: '9.3'
-    databases: {  }
+    databases:
+        106eS8TYwZso:
+            grant: ALL
+            name: zrada
+            user: zrada_user
+            password: G0NLKBvn1G1WLi50FQja
+            sql_file: ''
     adminer: '1'
 mariadb:
     install: '0'
