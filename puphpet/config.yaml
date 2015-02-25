@@ -140,6 +140,20 @@ nginx:
             client_max_body_size: 1m
             ssl_cert: ''
             ssl_key: ''
+        report:
+            proxy: ''
+            server_name: report.zrada-peremoga.com
+            www_root: /var/www/html/report
+            listen_port: '80'
+            location: \.php$
+            index_files:
+                - index.html
+            envvars:
+                - 'APP_ENV dev'
+            engine: php
+            client_max_body_size: 1m
+            ssl_cert: ''
+            ssl_key: ''
 php:
     install: '1'
     version: '56'
