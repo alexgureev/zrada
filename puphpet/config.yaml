@@ -129,6 +129,8 @@ nginx:
         9jrh4mbjkoix:
             proxy: ''
             server_name: vagrant.zrada-peremoga.com
+            server_aliases:
+                - www.zrada-peremoga.com
             www_root: /var/www/zrada/web
             listen_port: '80'
             location: \.php$
@@ -145,12 +147,12 @@ nginx:
             server_name: report.zrada-peremoga.com
             www_root: /var/www/html/report
             listen_port: '80'
-            location: \.php$
+            location: \.html$
             index_files:
                 - index.html
             envvars:
                 - 'APP_ENV dev'
-            engine: php
+            engine: false
             client_max_body_size: 1m
             ssl_cert: ''
             ssl_key: ''
@@ -206,7 +208,7 @@ xdebug:
         xdebug.remote_handler: dbgp
         xdebug.remote_port: '9000'
 xhprof:
-    install: '1'
+    install: '0'
 wpcli:
     install: '0'
     version: v0.17.1
